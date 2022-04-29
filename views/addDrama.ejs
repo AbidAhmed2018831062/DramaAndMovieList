@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0px;
+      padding:0px;
+      box-sizing: border-box;
+    }
+    header{
+      margin:0px;
+    }
+    body {
+      background-color: #F1F1F1;
+    }
+
+    .add {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .container {
+      background-color: white;
+      box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1), -30px 0px 40px rgba(0, 0, 0, 0.1);
+      weight: 50%;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-bottom: 10%;
+      margin-top: 20px;
+    }
+
+    .se button:hover {
+      background: #ccc;
+    }
+
+    .se button {
+      float: right;
+      margin-right: 16px;
+      padding: 5px;
+      background: #ddd;
+      font-size: 17px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .Actors {
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-top: 4%;
+      font-weight: bold;
+      font-size: 104%;
+
+    }
+
+    .na {
+      background-color: black;
+      font-weight: bold;
+      color: white;
+      padding: 20px;
+      display: block;
+
+    }
+
+    .nav {
+      display: inline-block;
+    }
+
+    .se {
+      float: right;
+      text-align: center;
+    }
+
+    .se input {
+      display: inline-block;
+      border-radius: 5px;
+
+      padding: 5px;
+      background-color: white;
+    }
+
+    .ul {
+      display: inline;
+    }
+
+    .li {
+      display: inline;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    header {
+      color: red;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .button {
+      border-radius: 5%;
+      background-color: #fff;
+      border: 1px solid grey;
+      margin-top: 20px;
+
+    }
+a{
+  text-decoration: none;
+  color:black;
+}
+    li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .Kdrama1 {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      font-size: 104%;
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-bottom: 1%;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    tr {
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 20px;
+    }
+
+    table,
+    tr {
+      border: 1px solid grey;
+      bodrder-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <header>
+    <div class="na">
+      <nav class="nav">
+        <ul class="ul">
+          <li class="li"><a href="#">All Kdramas</a></li>
+          <li class="li"><a href="#">Upcoming</a></li>
+          <li class="li"><a href="#">Remaining</a></li>
+        </ul>
+      </nav>
+      <div class="se">
+
+        <input type="text" placeholder="Search.." name="search" id="Se">
+
+
+        <button id="Search"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+    <div class="add">
+    <form action="/drama" method="post">
+  <div class="show">
+    <textarea name="name" id="name" rows="3" cols="20" class="Kdrama1" placeholder="Enter Name"></textarea>
+    <textarea id="rat" rows="3" cols="20" class="Kdrama1" placeholder="Enter Rating"></textarea>
+    <textarea name="acto" id="acto" rows="3" cols="20" class="Kdrama1"
+      placeholder="Enter Lead Actor's Name"></textarea>
+    <textarea name="actr" id="actr" rows="3" cols="20" class="Kdrama1"
+      placeholder="Enter Lead Actresse's Name"></textarea>
+      <textarea name="date" id="date" rows="3" cols="20" class="Kdrama1"
+      placeholder="Enter Finsh or upcoming date"></textarea>
+    <div class="Kdrama1">
+      <label for="cars">Choose an Option:</label>
+      <select name="cars" id="what">
+        <option value="Watched">Watched</option>
+        <option value="Upcoming">Upcoming</option>
+        <option value="Remaining">Remaining</option>
+
+      </select>
+      <br><br>
+    </div>
+    <button name="sub" type="submit" id="sub" class="Kdrama1 button">Submit</button>
+  </div>
+
+</form>
+</div>
+</div>
+</body>
+</html>
