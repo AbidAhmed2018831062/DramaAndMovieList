@@ -19,7 +19,7 @@ dramas.post("/searchResult",async(req,res)=>{
 
     const result=[];
     res1.forEach(e=>{
-        if(e.actressName===search||e.actorName===search||e.rating===search||e.name===search||e.what===search||e.date===search)
+        if(e.actressName.includes(search)||e.actorName.includes(search)||e.rating.includes(search)||e.name.includes(search)||e.what.includes(search)||e.date.includes(search))
         {
             result.push(e);
         }

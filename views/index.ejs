@@ -4,6 +4,8 @@
 <html>
 
 <head>
+  <script src="https://kit.fontawesome.com/6c9e83c3e9.js" crossorigin="anonymous"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
@@ -128,13 +130,13 @@ a{
 
     th,
     td {
-      padding: 20px;
+      padding: 20px 10px;
     }
 
     table,
     tr {
       border: 1px solid grey;
-      bodrder-collapse: collapse;
+     
     }
     #tb td{
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -182,6 +184,7 @@ a{
           </th>
           <th>Rating</th>
           <th>Date</th>
+          <th>Update</th>
         </tr>
         <tbody id="tb">
          <% dramas.forEach((e,i)=>{ %>
@@ -199,6 +202,9 @@ a{
               <td><%=e.actressName%></td>
             <td><%=e.rating%></td>
             <td><%=e.date%></td>
+            <td>
+             <span style="cursor:pointer;"> <a href="/update?<%=e._id%>"><i style="color:grey;"class="fa-solid fa-pencil"></i></a></span>
+            </td>
             </tr>
         <% })%>
 

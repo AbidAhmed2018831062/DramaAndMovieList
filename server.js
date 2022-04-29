@@ -12,7 +12,8 @@ app.use("/css",express.static(__dirname+'/public/css'))
 app.set("view engine","ejs");
 app.use("/drama",dramas);
 app.get("/",async (req,res)=>{
-    const allDrama=await mongoose.model("Dramas").find().clone().catch(err=>console.log(err));
+    
+    const allDrama=await mongoose.model("Dramas").find({what:"Watched"}).clone().catch(err=>console.log(err));
 
     allDrama.sort((a,b)=>{
         let j=parseFloat(a.rating);
