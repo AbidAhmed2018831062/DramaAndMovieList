@@ -151,7 +151,7 @@ a{
     <div class="na">
       <nav class="nav">
         <ul class="ul">
-          <li class="li"><a href="#">All Kdramas</a></li>
+          <li class="li"><a href="#">All Kdram</a></li>
           <li class="li"><a href="#">Upcoming</a></li>
           <li class="li"><a href="#">Remaining</a></li>
         </ul>
@@ -166,30 +166,59 @@ a{
     </div>
   </header>
     <div class="add">
-    <form action="/drama" method="post">
-  <div class="show">
-    <textarea name="name" id="name" rows="3" cols="20" class="Kdrama1" placeholder="Enter Name"></textarea>
-    <textarea id="rat" rows="3" name="rating" cols="20" class="Kdrama1" placeholder="Enter Rating"></textarea>
-    <textarea name="actorName" id="acto" rows="3" cols="20" class="Kdrama1"
-      placeholder="Enter Lead Actor's Name"></textarea>
-    <textarea name="actressName" id="actr" rows="3" cols="20" class="Kdrama1"
-      placeholder="Enter Lead Actresse's Name"></textarea>
-      <textarea name="date" id="date" rows="3" cols="20" class="Kdrama1"
-      placeholder="Enter Finsh or upcoming date"></textarea>
-    <div class="Kdrama1">
-      <label for="cars">Choose an Option:</label>
-      <select name="what" id="what">
-        <option value="Watched">Watched</option>
-        <option value="Upcoming">Upcoming</option>
-        <option value="Remaining">Remaining</option>
+   
+      <%if(dram!=null){%>
+        <form action="/drama/update?id=<%=dram._id%>" method="post">
+        <div class="show">
+          <textarea name="name" id="name" rows="3" cols="20" class="Kdrama1" value="<%=dram.name%>"><%=dram.name%></textarea>
+          <textarea id="rat" rows="3" name="rating" cols="20" class="Kdrama1" value="<%=dram.rating%>"><%=dram.rating%></textarea>
+          <textarea name="actorName" id="acto" rows="3" cols="20" class="Kdrama1"
+           value="<%=dram.actorName%>"><%=dram.actorName%></textarea>
+          <textarea name="actressName" id="actr" rows="3" cols="20" class="Kdrama1"
+           value="<%=dram.actressName%>"><%=dram.actressName%></textarea>
+            <textarea name="date" id="date" rows="3" cols="20" class="Kdrama1"
+            value="<%= dram.date%>"><%= dram.date%></textarea>
+          <div class="Kdrama1">
+            <label for="cars">Choose an Option:</label>
+            <select name="what" id="what">
+              <option value="Watched">Watched</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Remaining">Remaining</option>
+      
+            </select>
+            <br><br>
+          </div>
+          <button name="sub" type="submit" id="sub" class="Kdrama1 button">Update</button>
+        </div>
+      </form>
+      <%}
+       else {%>
+        <form action="/" method="post">
+        <div class="show">
+          <textarea name="name" id="name" rows="3" cols="20" class="Kdrama1" placeholder="Enter Name"></textarea>
+          <textarea id="rat" rows="3" name="rating" cols="20" class="Kdrama1" placeholder="Enter Rating"></textarea>
+          <textarea name="actorName" id="acto" rows="3" cols="20" class="Kdrama1"
+            placeholder="Enter Lead Actor's Name"></textarea>
+          <textarea name="actressName" id="actr" rows="3" cols="20" class="Kdrama1"
+            placeholder="Enter Lead Actresse's Name"></textarea>
+            <textarea name="date" id="date" rows="3" cols="20" class="Kdrama1"
+            placeholder="Enter Finsh or upcoming date"></textarea>
+          <div class="Kdrama1">
+            <label for="cars">Choose an Option:</label>
+            <select name="what" id="what">
+              <option value="Watched">Watched</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Remaining">Remaining</option>
+      
+            </select>
+            <br><br>
+          </div>
+          <button name="sub" type="submit" id="sub" class="Kdrama1 button">Submit</button>
+        </div>
+      </form>
+     <% }%>
 
-      </select>
-      <br><br>
-    </div>
-    <button name="sub" type="submit" id="sub" class="Kdrama1 button">Submit</button>
-  </div>
 
-</form>
 </div>
 </div>
 </body>

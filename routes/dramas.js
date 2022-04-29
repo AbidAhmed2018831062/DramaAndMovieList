@@ -5,7 +5,8 @@ const schema=require("H:/PHP/htdocs/Js/DramaandMovieList/schem/schema");
 const dra=mongoose.model("Dramas",schema);
 
 dramas.get("/addDrama",(req,res)=>{
-    res.render("addDrama");
+    const dram=null;
+    res.render("addDrama",{dram});
 });
 dramas.get("/upcoming",async(req,res)=>{
     const result=await dra.find({what:"Upcoming"}).clone();
@@ -33,6 +34,31 @@ dramas.post("/searchResult",async(req,res)=>{
     res.render("index",{dramas:result});
 });
 
+dramas.get("/update",async(req,res)=>{
+    try{
+        console.log(req.query.id);
+       
+      // console
+    const dram= await dra.findById({_id:req.query.id});
+    res.render("addDrama",{dram:dram});
+    }
+    catch{
+
+    }
+})
+
+dramas.post("/update",async(req,res)=>{
+    await dra.findByIdAndUpdate({_id:req.query.id},{$set:{
+        name:req.body.name,
+        rating:req.body.rating,
+        actorName:req.body.actorName,
+        actressName:req.body.actressName,
+        what:req.body.what,
+        date:req.body.date
+    }
+  });
+  res.redirect("/");
+})
 
 dramas.post("/",async (req,res)=>{
 try{
