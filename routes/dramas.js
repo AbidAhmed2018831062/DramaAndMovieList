@@ -7,6 +7,32 @@ const dra=mongoose.model("Dramas",schema);
 dramas.get("/addDrama",(req,res)=>{
     res.render("addDrama");
 });
+dramas.get("/upcoming",async(req,res)=>{
+    const result=await dra.find({what:"Upcoming"}).clone();
+    res.render("index",{
+        dramas:result
+    });
+});
+dramas.post("/searchResult",async(req,res)=>{
+    const search=req.body.search;
+    const res1=await dra.find({}).clone();
+
+    const result=[];
+    res1.forEach(e=>{
+        if(e.actressName===search||e.actorName===search||e.rating===search||e.name===search||e.what===search||e.date===search)
+        {
+            result.push(e);
+        }
+
+    });
+    result.sort((a,b)=>{
+        let j=parseFloat(a.rating);
+        let k=parseFloat(b.rating);
+        return k-j;
+    })
+    res.render("index",{dramas:result});
+});
+
 
 dramas.post("/",async (req,res)=>{
 try{

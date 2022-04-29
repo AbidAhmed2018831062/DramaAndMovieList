@@ -149,21 +149,21 @@ a{
     <div class="na">
       <nav class="nav">
         <ul class="ul">
-          <li class="li"><a href="#">All Kdramas</a></li>
-          <li class="li"><a href="#">Upcoming</a></li>
+          <li class="li"><a href="/">All Kdramas</a></li>
+          <li class="li"><a href="/drama/upcoming">Upcoming</a></li>
           <li class="li"><a href="#">Remaining</a></li>
         </ul>
       </nav>
       <div class="se">
-
+      <form action="/drama/searchResult" method="post">
         <input type="text" placeholder="Search.." name="search" id="Se">
 
-
-        <button id="Search"><i class="fa fa-search"></i></button>
+                <button id="Search" type="submit"><i class="fa fa-search"></i></button>
+      </form>
       </div>
     </div>
     <header>
-      <h3> Korean Dramas I Have Watched So Far</h3>
+      <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Korean Dramas I Have Watched So Far</h3>
     </header>
     <div class="Kdrama1" id="tab">
       <table>
