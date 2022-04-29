@@ -10,4 +10,10 @@ dramas.get("/addDrama",(req,res)=>{
 
 dramas.post("/",async (req,res)=>{
 
-    dra.insertOne(req
+    const t=dra.insertOne(req.body);
+    
+
+
+
+});
+module.exports=dramas;
