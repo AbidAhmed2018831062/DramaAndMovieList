@@ -136,6 +136,11 @@ a{
       border: 1px solid grey;
       bodrder-collapse: collapse;
     }
+    #tb td{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:grey;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -176,9 +181,26 @@ a{
             Actress
           </th>
           <th>Rating</th>
+          <th>Date</th>
         </tr>
         <tbody id="tb">
-
+         <% dramas.forEach((e,i)=>{ %>
+          <tr>
+            <td>
+              <%=i+1%>
+            </td>
+            <td>
+              <%=e.name%>
+            </td>
+            <td>
+              <%=e.actorName%>
+            </td>
+            
+              <td><%=e.actressName%></td>
+            <td><%=e.rating%></td>
+            <td><%=e.date%></td>
+            </tr>
+        <% })%>
 
         </tbody>
       </table>

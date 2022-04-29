@@ -9,7 +9,7 @@ const schema=mongoose.Schema({
         required:true
     },
     rating:{
-        type:Decimal128,
+        type:String,
         required:true
     },
     actorName:
@@ -26,8 +26,8 @@ const schema=mongoose.Schema({
         enum:["Watched","Upcoming","Remaining"]
     },
     date:{
-        type:Date,
-        default:Date.now,
+        type:String,
+        required:true
     }
 });
 
