@@ -183,6 +183,7 @@ a{
             Actress
           </th>
           <th>Rating</th>
+          <th>Industry</th>
           <th>Date</th>
           <th>Update</th>
         </tr>
@@ -198,10 +199,17 @@ a{
             <td>
               <%=e.actorName%>
             </td>
-            
-              <td><%=e.actressName%></td>
+           <td><%=e.actressName%></td>
             <td><%=e.rating%></td>
+            <td>
+            <% if (e.industry===undefined) { %>
+              <span> Korean</span>
+              <%} else { %>
+              <span> <%=e.industry%> </span>
+              <% } %>
+            </td>
             <td><%=e.date%></td>
+           
             <td>
              <span style="cursor:pointer;"> <a href="/drama/update?id=<%=e._id%>"><i style="color:grey;"class="fa-solid fa-pencil"></i></a></span>
             </td>

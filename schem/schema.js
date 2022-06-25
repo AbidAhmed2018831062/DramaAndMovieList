@@ -21,6 +21,10 @@ const schema=mongoose.Schema({
       type:String,
       required:true
     },
+    industry:{
+        type:String,
+        required:true
+    },
     what:{
         type:String,
         enum:["Watched","Upcoming","Remaining"]
